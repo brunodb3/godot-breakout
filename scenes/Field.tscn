@@ -1,0 +1,43 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://images/single_white_pixel.png" type="Texture" id=1]
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 960, 10 )
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 10, 560 )
+
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 10, 560 )
+
+[node name="Field" type="Node2D"]
+
+[node name="Background" type="Node2D" parent="."]
+position = Vector2( 960, 540 )
+z_index = -1
+
+[node name="Sprite" type="Sprite" parent="Background"]
+modulate = Color( 0, 0, 0, 1 )
+scale = Vector2( 1920, 1080 )
+texture = ExtResource( 1 )
+
+[node name="Walls" type="Node2D" parent="."]
+
+[node name="Top" type="StaticBody2D" parent="Walls"]
+position = Vector2( 960, -10 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Top"]
+shape = SubResource( 2 )
+
+[node name="Left" type="StaticBody2D" parent="Walls"]
+position = Vector2( -10, 540 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Left"]
+shape = SubResource( 4 )
+
+[node name="Right" type="StaticBody2D" parent="Walls"]
+position = Vector2( 1930, 540 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Right"]
+shape = SubResource( 5 )

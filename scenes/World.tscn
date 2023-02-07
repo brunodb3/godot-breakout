@@ -1,0 +1,18 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://scenes/Field.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scenes/Player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes/Ball.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scripts/World.gd" type="Script" id=4]
+
+[node name="World" type="YSort"]
+script = ExtResource( 4 )
+
+[node name="Field" parent="." instance=ExtResource( 1 )]
+unique_name_in_owner = true
+
+[node name="Player" parent="." instance=ExtResource( 2 )]
+position = Vector2( 960, 960 )
+
+[node name="Ball" parent="." instance=ExtResource( 3 )]
+position = Vector2( 960, 930 )
